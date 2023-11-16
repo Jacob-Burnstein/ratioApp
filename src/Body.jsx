@@ -16,10 +16,12 @@ export default function Body() {
     ///////////// Errors TO DO  ///////////////
     // if exisiting values are not numbers
     // if more than one value is null
+    // sort out the NaN error on UI
 
     /////////// TO Add ///////////////
     // option to switch ratio x/ratio y to percent
     // reset button
+    // have the message only display on submit/click
 
     if (!x) {
       const result = y * (a / b);
@@ -42,44 +44,59 @@ export default function Body() {
 
   return (
     <>
-      <h3>What am I missing?</h3>
+      <h3>(Out of coffee) Ratio Calucator</h3>
+      <p>
+        Have you ever gone you make your morning coffee to then realize you
+        don't have enough beans for your typical brew? Well, how many grams
+        <em> do </em>
+        you have? Great, but how many cups of water should you pour in? It's 6am
+        - too early for math.
+      </p>
+      <p>
+        In this case, enter the amount of grams you do have, and in the ratio
+        boxes, enter what you usually do. Hit calculate, and we'll tell you how
+        much water to use. This app is intended to fill in the missing link,
+        whatever it is.
+      </p>
       <form onSubmit={handleCalculate}>
-        <label>Unit 1:</label>
+        <p>Fill out 3 of 4 boxes to calculate the missing number.</p>
         <input
           type="text"
-          placeholder="Unit 1"
+          className="inputs"
+          placeholder="ex. grams"
           value={x}
-          onChange={(e) => setX(+e.target.value)}
+          onChange={(e) => setX(e.target.value)}
         />
         <br />
-        <label>Unit 2:</label>
         <input
+          className="inputs"
           type="text"
-          placeholder="Unit 2"
+          placeholder="ex. cups"
           value={y}
-          onChange={(e) => setY(+e.target.value)}
+          onChange={(e) => setY(e.target.value)}
         />
         <br />
-        <label>Ratio X:</label>
-        <input
-          type="text"
-          placeholder="numerator"
-          value={a}
-          onChange={(e) => setA(+e.target.value)}
-        />
-        <label>Ratio Y:</label>
-        <input
-          type="text"
-          placeholder="denominator"
-          value={b}
-          onChange={(e) => setB(+e.target.value)}
-        />
+        <div className="ratio-container">
+          <input
+            type="text"
+            className="ratio-inputs"
+            placeholder="usual (grams)"
+            value={a}
+            onChange={(e) => setA(e.target.value)}
+          />
+          <p>:</p>
+          <input
+            type="text"
+            className="ratio-inputs"
+            placeholder="ratio (cups)"
+            value={b}
+            onChange={(e) => setB(e.target.value)}
+          />
+        </div>
         <br />
         <button>Calculate</button>
       </form>
-      <div>
-        <p>Message: {message}</p>
-      </div>
+      {message ? <p>{message}</p> : null}
     </>
   );
 }
