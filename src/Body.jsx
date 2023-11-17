@@ -47,7 +47,7 @@ export default function Body() {
       <h3>(Out of coffee) Ratio Calucator</h3>
       <p>
         Have you ever gone you make your morning coffee to then realize you
-        don't have enough beans for your typical brew? Well, how many grams
+        don't have enough beans for your typical brew? How many grams
         <em> do </em>
         you have? Great, but how many cups of water should you pour in? It's 6am
         - too early for math.
@@ -60,41 +60,40 @@ export default function Body() {
       </p>
       <form onSubmit={handleCalculate}>
         <p>Fill out 3 of 4 boxes to calculate the missing number.</p>
-        <input
-          type="text"
-          className="inputs"
-          placeholder="ex. grams"
-          value={x}
-          onChange={(e) => setX(e.target.value)}
-        />
-        <br />
-        <input
-          className="inputs"
-          type="text"
-          placeholder="ex. cups"
-          value={y}
-          onChange={(e) => setY(e.target.value)}
-        />
-        <br />
+        <div className="topInputContainer">
+          <input
+            type="text"
+            className="inputs"
+            placeholder="ex. grams"
+            value={x}
+            onChange={(e) => setX(e.target.value)}
+          />
+          <input
+            className="inputs"
+            type="text"
+            placeholder="ex. cups"
+            value={y}
+            onChange={(e) => setY(e.target.value)}
+          />
+        </div>
+        <button>Calculate</button>
         <div className="ratio-container">
           <input
             type="text"
             className="ratio-inputs"
-            placeholder="usual (grams)"
+            placeholder="grams (per)"
             value={a}
             onChange={(e) => setA(e.target.value)}
           />
-          <p>:</p>
           <input
             type="text"
             className="ratio-inputs"
-            placeholder="ratio (cups)"
+            placeholder="cups"
             value={b}
             onChange={(e) => setB(e.target.value)}
           />
         </div>
         <br />
-        <button>Calculate</button>
       </form>
       {message ? <p>{message}</p> : null}
     </>

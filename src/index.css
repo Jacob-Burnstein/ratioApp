@@ -1,14 +1,24 @@
 :root {
-  line-height: 1.5;
-  font-weight: 400;
+  line-height: 1.2;
   font-size: 16px;
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
+  width: 40em;
+  margin: 0 auto;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  text-align: center;
 }
 
 .ratio-container {
   display: flex;
+  justify-content: center;
 }
 
 .inputs {
@@ -18,9 +28,18 @@
   font-size: 20px;
 }
 
+.topInputContainer {
+  display: flex;
+  justify-content: center;
+}
+
 .ratio-inputs {
-  width: 5em;
+  width: 10em;
   height: 6em;
   margin: 2em;
   font-size: 20px;
+}
+
+button {
+  justify-content: center;
 }

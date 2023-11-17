@@ -1,3 +1,3 @@
 export default function Navbar() {
-  return <nav>Navbar coming soon</nav>;
+  return <nav>...Site under construction...</nav>;
 }
