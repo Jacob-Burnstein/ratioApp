@@ -2,14 +2,15 @@
   line-height: 1.2;
   font-size: 16px;
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: #6f4e37;
+  background-color: #f5f5dc;
   width: 40em;
   margin: 0 auto;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 4em;
 }
 
 .container {
@@ -26,6 +27,7 @@
   height: 6em;
   margin: 2em;
   font-size: 20px;
+  text-align: center;
 }
 
 .topInputContainer {
@@ -38,8 +40,13 @@
   height: 6em;
   margin: 2em;
   font-size: 20px;
+  text-align: center;
 }
 
 button {
   justify-content: center;
+}
+
+button:hover {
+  background-color: #d4af37;
 }

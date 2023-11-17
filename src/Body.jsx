@@ -10,12 +10,27 @@ export default function Body() {
 
   const handleCalculate = (e) => {
     e.preventDefault();
+    console.log("Type of x: ", typeof x);
+    console.log("Type of y: ", typeof y);
+    console.log("Type of a: ", typeof a);
+    console.log("Type of b: ", typeof b);
+    ///////////// Errors TO DO  ///////////////
+    // fix the auto scroll thing to not allow negative numbers
+
+    // edit so that it only checks values that are given.
+    if (
+      (a.length > 0 && typeof a != number) ||
+      (b.length > 0 && typeof b != number) ||
+      (x.length > 0 && typeof x != number) ||
+      (y.length > 0 && typeof y != number)
+    ) {
+      setMessage("Inputs need to be numbers");
+    }
 
     // if more than one input is null, error message
-
-    ///////////// Errors TO DO  ///////////////
-    // if exisiting values are not numbers
-    // if more than one value is null
+    if ((!a && !x) || (!a && !y) || (!b && !x) || (!x && !y)) {
+      setMessage("Please fill in at least 3 values");
+    }
     // sort out the NaN error on UI
 
     /////////// TO Add ///////////////
@@ -46,49 +61,52 @@ export default function Body() {
     <>
       <h3>(Out of coffee) Ratio Calucator</h3>
       <p>
-        Have you ever gone you make your morning coffee to then realize you
-        don't have enough beans for your typical brew? How many grams
+        Have you ever gone to make your morning coffee to then realize you don't
+        have enough beans for your typical brew? How many grams
         <em> do </em>
         you have? Great, but how many cups of water should you pour in? It's 6am
         - too early for math.
       </p>
       <p>
         In this case, enter the amount of grams you do have, and in the ratio
-        boxes, enter what you usually do. Hit calculate, and we'll tell you how
+        boxes, enter what you usually use. Hit calculate, and we'll tell you how
         much water to use. This app is intended to fill in the missing link,
         whatever it is.
       </p>
       <form onSubmit={handleCalculate}>
-        <p>Fill out 3 of 4 boxes to calculate the missing number.</p>
+        <p>
+          Fill out 3 of 4 boxes to calculate your missing starting value, or
+          fill out the top two to find your reduced ratio or percentage.
+        </p>
         <div className="topInputContainer">
           <input
-            type="text"
+            type="number"
             className="inputs"
             placeholder="ex. grams"
             value={x}
-            onChange={(e) => setX(e.target.value)}
+            onChange={(e) => setX(parseInt(e.target.value))}
           />
           <input
             className="inputs"
-            type="text"
+            type="number"
             placeholder="ex. cups"
             value={y}
-            onChange={(e) => setY(e.target.value)}
+            onChange={(e) => setY(parseInt(e.target.value))}
           />
         </div>
         <button>Calculate</button>
         <div className="ratio-container">
           <input
-            type="text"
+            type="number"
             className="ratio-inputs"
-            placeholder="grams (per)"
+            placeholder="this many per"
             value={a}
-            onChange={(e) => setA(e.target.value)}
+            onChange={(e) => setA(parseInt(e.target.value))}
           />
           <input
-            type="text"
+            type="number"
             className="ratio-inputs"
-            placeholder="cups"
+            placeholder="this many"
             value={b}
             onChange={(e) => setB(e.target.value)}
           />
