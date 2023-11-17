@@ -17,21 +17,10 @@ export default function Body() {
     ///////////// Errors TO DO  ///////////////
     // fix the auto scroll thing to not allow negative numbers
 
-    // edit so that it only checks values that are given.
-    if (
-      (a.length > 0 && typeof a != number) ||
-      (b.length > 0 && typeof b != number) ||
-      (x.length > 0 && typeof x != number) ||
-      (y.length > 0 && typeof y != number)
-    ) {
-      setMessage("Inputs need to be numbers");
-    }
-
     // if more than one input is null, error message
     if ((!a && !x) || (!a && !y) || (!b && !x) || (!x && !y)) {
       setMessage("Please fill in at least 3 values");
     }
-    // sort out the NaN error on UI
 
     /////////// TO Add ///////////////
     // option to switch ratio x/ratio y to percent
@@ -83,6 +72,7 @@ export default function Body() {
             type="number"
             className="inputs"
             placeholder="ex. grams"
+            min="0"
             value={x}
             onChange={(e) => setX(parseInt(e.target.value))}
           />
@@ -90,6 +80,7 @@ export default function Body() {
             className="inputs"
             type="number"
             placeholder="ex. cups"
+            min="0"
             value={y}
             onChange={(e) => setY(parseInt(e.target.value))}
           />
@@ -100,6 +91,7 @@ export default function Body() {
             type="number"
             className="ratio-inputs"
             placeholder="this many per"
+            min="0"
             value={a}
             onChange={(e) => setA(parseInt(e.target.value))}
           />
@@ -107,8 +99,9 @@ export default function Body() {
             type="number"
             className="ratio-inputs"
             placeholder="this many"
+            min="0"
             value={b}
-            onChange={(e) => setB(e.target.value)}
+            onChange={(e) => setB(parseInt(e.target.value))}
           />
         </div>
         <br />
