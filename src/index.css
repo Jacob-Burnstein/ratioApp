@@ -1,33 +1,41 @@
 :root {
   line-height: 1.2;
   font-size: 16px;
-  color-scheme: light dark;
+  /* color-scheme: light dark; */
   color: #6f4e37;
   background-color: #f5f5dc;
-  width: 40em;
   margin: 0 auto;
-  height: 100vh;
+  /* height: 100vh; */
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 4em;
+  /* padding: 2em; */
 }
 
 .container {
   text-align: center;
 }
 
-.ratio-container {
-  display: flex;
-  justify-content: center;
+.main-container {
+  width: 80vw;
 }
 
-.inputs {
-  width: 10em;
-  height: 6em;
+/* .ratio-container {
+  display: flex;
+  justify-content: center;
+} */
+
+input {
+  width: 5em;
+  height: 5em;
   margin: 2em;
   font-size: 20px;
   text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: row;
 }
 
 .topInputContainer {
@@ -35,16 +43,14 @@
   justify-content: center;
 }
 
-.ratio-inputs {
-  width: 10em;
-  height: 6em;
-  margin: 2em;
-  font-size: 20px;
-  text-align: center;
+.ratio-container {
+  display: flex;
+  /* justify-content: center; */
 }
 
 button {
   justify-content: center;
+  height: 4em;
 }
 
 button:hover {
