@@ -64,7 +64,7 @@ export default function Body() {
       </p>
       <p>
         Fill out 3 of 4 boxes to calculate your missing starting value, or fill
-        out the top two to find your reduced ratio or percentage.
+        out the top two to find your ratio percentage.
       </p>
       <h3>A:B = C:D</h3>
 
