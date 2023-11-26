@@ -10,26 +10,7 @@ export default function Body() {
 
   const handleCalculate = (e) => {
     e.preventDefault();
-    console.log("Type of x: ", typeof x);
-    console.log("Type of y: ", typeof y);
-    console.log("Type of a: ", typeof a);
-    console.log("Type of b: ", typeof b);
-    ///////////// Errors TO DO  ///////////////
-    // fix the auto scroll thing to not allow negative numbers
 
-    // if more than one input is null, error message
-    //  if x is empty, y, a, b need not be empty strings
-    // if (
-    //   typeof x === "string" &&
-    //   (typeof y === "string" || typeof a === "string" || typeof b === "string")
-    // ) {
-    //   setMessage("F Y");
-    // }
-
-    /////////// TO Add ///////////////
-    // option to switch ratio x/ratio y to percent
-    // reset button
-    // have the message only display on submit/click
     if (
       (!a && !b && !x && !y) ||
       !a & !x ||
@@ -67,7 +48,7 @@ export default function Body() {
 
   return (
     <div className="main-container">
-      <h3>(Out of coffee) Ratio Calucator</h3>
+      <h2>(Out of coffee) Ratio Calucator</h2>
       <p>
         Have you ever gone to make your morning coffee to then realize you don't
         have enough beans for your typical brew? How many grams
@@ -85,6 +66,7 @@ export default function Body() {
         Fill out 3 of 4 boxes to calculate your missing starting value, or fill
         out the top two to find your reduced ratio or percentage.
       </p>
+      <h3>A:B = C:D</h3>
 
       {message ? <h4>{message}</h4> : null}
       <form onSubmit={handleCalculate}>
@@ -94,7 +76,6 @@ export default function Body() {
             <input
               type="number"
               className="inputs"
-              placeholder="ex. grams"
               min="0"
               value={x}
               onChange={(e) => setX(parseInt(e.target.value))}
@@ -105,21 +86,19 @@ export default function Body() {
             <input
               className="inputs"
               type="number"
-              placeholder="ex. cups"
               min="0"
               value={y}
               onChange={(e) => setY(parseInt(e.target.value))}
             />
           </div>
         </div>
-        <button>=</button>
+        <button>Calculate</button>
         <div className="ratio-container">
           <div className="label-inputs">
             <label>C</label>
             <input
               type="number"
               className="ratio-inputs"
-              placeholder="this many per"
               min="0"
               value={a}
               onChange={(e) => setA(parseInt(e.target.value))}
@@ -130,7 +109,6 @@ export default function Body() {
             <input
               type="number"
               className="ratio-inputs"
-              placeholder="this many"
               min="0"
               value={b}
               onChange={(e) => setB(parseInt(e.target.value))}

@@ -5,11 +5,9 @@
   color: #6f4e37;
   background-color: #f5f5dc;
   margin: 0 auto;
-  /* height: 100vh; */
   display: flex;
   justify-content: center;
   align-items: center;
-  /* padding: 2em; */
 }
 
 .container {
@@ -20,22 +18,21 @@
   width: 80vw;
 }
 
-/* .ratio-container {
+.label-inputs {
   display: flex;
-  justify-content: center;
-} */
-
-input {
-  width: 5em;
-  height: 5em;
-  margin: 2em;
-  font-size: 20px;
-  text-align: center;
+  flex-direction: column;
 }
 
-form {
-  display: flex;
-  flex-direction: row;
+label {
+  font-weight: bold;
+}
+
+input {
+  width: 3em;
+  height: 3em;
+  margin: 1em;
+  font-size: 20px;
+  text-align: center;
 }
 
 .topInputContainer {
@@ -45,14 +42,19 @@ form {
 
 .ratio-container {
   display: flex;
-  /* justify-content: center; */
+  justify-content: center;
 }
 
 button {
   justify-content: center;
-  height: 4em;
+  height: 2em;
+  margin-bottom: 1em;
+  border-radius: 8px;
+  color: #6f4e37;
+  background-color: #d4af37;
+  font-weight: bold;
 }
 
 button:hover {
-  background-color: #d4af37;
+  background-color: #fffdd0;
 }
