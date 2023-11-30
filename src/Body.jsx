@@ -75,10 +75,11 @@ export default function Body() {
             <label>A</label>
             <input
               type="number"
+              step=".01"
               className="inputs"
               min="0"
               value={x}
-              onChange={(e) => setX(parseInt(e.target.value))}
+              onChange={(e) => setX(parseFloat(e.target.value))}
             />
           </div>
           <div className="label-inputs">
@@ -86,9 +87,10 @@ export default function Body() {
             <input
               className="inputs"
               type="number"
+              step=".01"
               min="0"
               value={y}
-              onChange={(e) => setY(parseInt(e.target.value))}
+              onChange={(e) => setY(parseFloat(e.target.value))}
             />
           </div>
         </div>
@@ -98,20 +100,22 @@ export default function Body() {
             <label>C</label>
             <input
               type="number"
+              step=".01"
               className="ratio-inputs"
               min="0"
               value={a}
-              onChange={(e) => setA(parseInt(e.target.value))}
+              onChange={(e) => setA(parseFloat(e.target.value))}
             />
           </div>
           <div className="label-inputs">
             <label>D</label>
             <input
               type="number"
+              step=".01"
               className="ratio-inputs"
               min="0"
               value={b}
-              onChange={(e) => setB(parseInt(e.target.value))}
+              onChange={(e) => setB(parseFloat(e.target.value))}
             />
           </div>
         </div>
