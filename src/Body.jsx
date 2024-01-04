@@ -6,7 +6,6 @@ export default function Body() {
   const [a, setA] = useState("");
   const [b, setB] = useState("");
   const [message, setMessage] = useState("");
-  // const [ratio, setRatio] = useState("");
 
   const handleCalculate = (e) => {
     e.preventDefault();
