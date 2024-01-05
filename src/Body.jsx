@@ -9,35 +9,37 @@ export default function Body() {
 
   const handleCalculate = (e) => {
     e.preventDefault();
-
+    // Error handling for invalid inputs
     if (
       (!a && !b && !c && !d) ||
+      (!a && !b) ||
       (!a && !c) ||
-      (!b && !c) ||
       (!a && !d) ||
-      (!b && !d) ||
-      (!a && !b)
+      (!b && !c) ||
+      (!b && !d)
     ) {
       setMessage(`Please enter three inputs`);
+      // Return message if A & B are valid, but C & D are empty. This is the only scenario where two inputs can be empty
     } else if (!c && !d) {
       const result = a / b;
       const percent = (result * 100).toFixed(2);
       setMessage(`The ratio is ${a}:${b}, or ${percent}%.`);
+      // Equation for missing unit A
     } else if (!a) {
       const result = b * (c / d);
-      if (Number.isNaN(result)) {
-        setMessage("this works");
-      }
       const fixedResult = result.toFixed(2);
       setMessage(`The missing unit is ${fixedResult}`);
+      // Equation for missing unit B
     } else if (!b) {
       const result = (a * d) / c;
       const fixedResult = result.toFixed(2);
       setMessage(`The missing unit is ${fixedResult}`);
+      // Equation for missing unit C
     } else if (!c) {
       const result = (a * d) / b;
       const fixedResult = result.toFixed(2);
       setMessage(`The missing unit is ${fixedResult}`);
+      // Equation for missing unit D
     } else if (!d) {
       const result = (b * c) / a;
       const fixedResult = result.toFixed(2);
