@@ -12,10 +12,10 @@ export default function Body() {
 
     if (
       (!a && !b && !c && !d) ||
-      !c & !a ||
-      !c & !b ||
-      (!d && !a) ||
-      (!d && !b) ||
+      (!a && !c) ||
+      (!b && !c) ||
+      (!a && !d) ||
+      (!b && !d) ||
       (!a && !b)
     ) {
       setMessage(`Please enter three inputs`);
@@ -31,15 +31,15 @@ export default function Body() {
       const fixedResult = result.toFixed(2);
       setMessage(`The missing unit is ${fixedResult}`);
     } else if (!b) {
-      const result = (d * a) / c;
+      const result = (a * d) / c;
       const fixedResult = result.toFixed(2);
       setMessage(`The missing unit is ${fixedResult}`);
     } else if (!c) {
-      const result = (d * a) / b;
+      const result = (a * d) / b;
       const fixedResult = result.toFixed(2);
       setMessage(`The missing unit is ${fixedResult}`);
     } else if (!d) {
-      const result = (c * b) / a;
+      const result = (b * c) / a;
       const fixedResult = result.toFixed(2);
       setMessage(`The missing unit is ${fixedResult}`);
     }
