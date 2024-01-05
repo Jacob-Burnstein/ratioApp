@@ -1,4 +1,10 @@
 import { useState } from "react";
+import {
+  calculateMissingA,
+  calculateMissingB,
+  calculateMissingC,
+  calculateMissingD,
+} from "./calculations.js";
 
 export default function Body() {
   const [a, setA] = useState("");
@@ -26,19 +32,20 @@ export default function Body() {
       setMessage(`The ratio is ${a}:${b}, or ${percent}%.`);
       // Equation for missing unit A
     } else if (!a) {
-      const fixedResult = (b * (c / d)).toFixed(2);
+      // const fixedResult = (b * (c / d)).toFixed(2);
+      const fixedResult = calculateMissingA(b, c, d);
       setMessage(`The missing unit is ${fixedResult}`);
       // Equation for missing unit B
     } else if (!b) {
-      const fixedResult = ((a * d) / c).toFixed(2);
+      const fixedResult = calculateMissingB(a, c, d);
       setMessage(`The missing unit is ${fixedResult}`);
       // Equation for missing unit C
     } else if (!c) {
-      const fixedResult = ((a * d) / b).toFixed(2);
+      const fixedResult = calculateMissingC(a, b, d);
       setMessage(`The missing unit is ${fixedResult}`);
       // Equation for missing unit D
     } else if (!d) {
-      const fixedResult = ((b * c) / a).toFixed(2);
+      const fixedResult = calculateMissingD(a, b, c);
       setMessage(`The missing unit is ${fixedResult}`);
     }
   };
